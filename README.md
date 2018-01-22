@@ -1,2 +1,2 @@
 # algrorithm_practise
-excitition
+Use Git to increase excitation!
