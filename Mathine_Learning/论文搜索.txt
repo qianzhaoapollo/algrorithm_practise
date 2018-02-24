@@ -1,0 +1,14 @@
+http://www.allinit.cn/e/action/ListInfo/?classid=7
+
+qianzhao	:Accuant
+zhaoqian	:Keys
+
+
+
+
+t.time
+t.path_code
+t.path
+t.flow
+t.car_flow
+t.truck_flow
