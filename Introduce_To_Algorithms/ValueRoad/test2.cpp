@@ -3,12 +3,16 @@
 #include <cstdlib>
 #include <vector>
 #include <queue>
+#include <cstring>
 using namespace std;
 
 struct csvdata {
     string date;
     string road_id;
     string long_late;
+    string longtitude;
+    string latetitude;
+    int len;
     int total_flow;
     int trunk_flow;
     int car_flow;
@@ -40,20 +44,28 @@ int main()
 
         csvdata intp;
 
-        value.c_str();
         int i=0;
         int count = 0;
+        int count_pos = 0;
         while(value[i] != '\0') {
             if(value[i] == '|') {
                 count++;
+                i++;
+            }
+            if(value[i] == ';') {
+                count_pos++;
                 i++;
             }
             if(count == 0)
                 intp.date += value[i];
             if(count == 1)
                 intp.road_id += value[i];
-            if(count == 2)
-                intp.long_late += value[i];
+            if(count == 2) {
+                if(count_pos == 0)
+                    intp.longtitude += value[i];
+                if(count_pos == 1)
+                    intp.latetitude += value[i];
+            }
 
             if(count == 3)
                 tmp_total += value[i];
@@ -77,7 +89,7 @@ int main()
     int num=0;
 
     while(!Q.empty()) {
-        cout<<Q.top().total_flow<<endl;
+        cout<<Q.top().longtitude<<" "<<Q.top().latetitude<<endl;
 
         Q.pop();
         num++;
