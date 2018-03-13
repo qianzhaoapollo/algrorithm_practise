@@ -102,7 +102,7 @@ int main()
 
     int sameflowcount=0;
     int sametotalflow=0;
-    int sametrunkflow=0;
+    //int sametrunkflow=0;
     int diffflag = 0;
     queue<int> total_flow;
     queue<int> total_flow_copy;
@@ -116,8 +116,8 @@ int main()
 
         if(sametotalflow != Q.top().total_flow) {
             diffflag = 1;
-            sametotalflow = Q.top().total_flow;//cout<<sametotalflow;
-            sametrunkflow = Q.top().trunk_flow;
+            sametotalflow = Q.top().total_flow;
+            //sametrunkflow = Q.top().trunk_flow;
             if(sameflowcount != 0 )
                 total_flow.push(sameflowcount);
             sameflowcount = 0;
@@ -129,6 +129,8 @@ int main()
             total_flow.push(1);
         }
         else {
+        //else if(sametrunkflow != Q.top().trunk_flow) {
+        //if(sametotalflow == Q.top().total_flow && sametrunkflow != Q.top().trunk_flow) {
             diffflag = 0;
             sameflowcount++;
         }
@@ -158,9 +160,6 @@ int main()
 
         full_road.push_back(swap_place.front());
 
-        //for(list<csvdata>::iterator it=swap_place.begin(); it!=swap_place.end(); it++) {
-            //csvdata tem = *it;
-            //full_road.push_back(tem);
        for(unsigned int k=0; k<swap_place.size(); k++) {
             for(list<csvdata>::iterator ik=swap_place.begin(); ik!=swap_place.end(); ik++) {
                 csvdata kem = *ik;
@@ -173,16 +172,17 @@ int main()
             }
         }
 
+        /*
         for(list<csvdata>::iterator it=full_road.begin(); it!=full_road.end(); it++) {
             csvdata tem = *it;
-            cout<<tem.start_point<<" "<<tem.end_point<<endl;
+            cout<<tem.start_point<<"  "<<tem.end_point<<endl;
         }
+        */
+        cout<<"full_road.size()="<<full_road.size()<<endl;
+        cout<<full_road.front().start_point<<"  "<<full_road.back().end_point<<endl;
 
-
-
-            //cout<<tem.start_point<<" "<<tem.end_point<<endl;
-
-        //}
+        swap_place.clear();
+        full_road.clear();
 
     }
 
