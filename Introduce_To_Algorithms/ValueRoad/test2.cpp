@@ -5,6 +5,7 @@
 #include <queue>
 #include <cstring>
 #include <list>
+#include<time.h>
 using namespace std;
 
 struct csvdata {
@@ -28,15 +29,20 @@ struct cmp {
 priority_queue<csvdata, vector<csvdata>, cmp> Q;
 priority_queue<csvdata, vector<csvdata>, cmp> R;
 
-int main()
+int main(int argc, char* argv[])
 {
+    clock_t start,finish;
+    double totaltime;
+    start=clock();
+
     string filename;
-    ifstream infilename("inputfilename.txt");
-    ofstream fout("out.csv");
-    getline(infilename, filename);
+    //ifstream infilename("inputfilename.txt");
+    ofstream fout(argv[2]);
+    //getline(infilename, filename);
 
     string value;
-    ifstream infile(filename.c_str());
+    //ifstream infile(filename.c_str());
+    ifstream infile(argv[1]);
     ofstream out;
     while(!infile.eof()) {
         getline(infile, value);
@@ -188,7 +194,11 @@ int main()
     }
     fout.close();
 
-    cout<<"num: "<<num<<"; sum: "<<sum<<"; countnull: "<<countnull;
+    cout<<"num: "<<num<<"; sum: "<<sum<<"; countnull: "<<countnull<<endl;
+
+    finish=clock();
+    totaltime=(double)(finish-start)/CLOCKS_PER_SEC;
+    cout<<"\n此程序的运行时间为"<<totaltime<<"秒！"<<endl;
 
     return 0;
 }
