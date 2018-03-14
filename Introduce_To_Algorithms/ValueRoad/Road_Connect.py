@@ -11,5 +11,11 @@ for year in years:
         finput = str(year) + month + 'result.csv'
         output = str(year) + month + 'fullroad.csv'
         #print(data)
-        os.system("./connect_pieces " + finput + ' ' + output)
-        print("./connect_pieces " + finput + ' ' + output + " is ready!")
+        try:
+            f = open(finput)
+            f.close()
+            os.system("./connect_pieces " + finput + ' ' + output)
+            print("./connect_pieces " + finput + ' ' + output + " is ready!")
+            
+        except FileNotFoundError:
+            print("File is not found.")
