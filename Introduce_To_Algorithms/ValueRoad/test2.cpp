@@ -32,6 +32,7 @@ int main()
 {
     string filename;
     ifstream infilename("inputfilename.txt");
+    ofstream fout("out.csv");
     getline(infilename, filename);
 
     string value;
@@ -178,13 +179,14 @@ int main()
             cout<<tem.start_point<<"  "<<tem.end_point<<endl;
         }
         */
-        cout<<"full_road.size()="<<full_road.size()<<endl;
-        cout<<full_road.front().start_point<<"  "<<full_road.back().end_point<<endl;
+        //cout<<"full_road.size()="<<full_road.size()<<endl;
+        fout<<full_road.back().date<<" "<<full_road.back().road_id<<" "<<full_road.front().start_point<<" "<<full_road.back().end_point<<" "<<full_road.back().total_flow<<" "<<full_road.back().trunk_flow<<" "<<full_road.back().car_flow<<endl;
 
         swap_place.clear();
         full_road.clear();
 
     }
+    fout.close();
 
     cout<<"num: "<<num<<"; sum: "<<sum<<"; countnull: "<<countnull;
 

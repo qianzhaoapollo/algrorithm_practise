@@ -31,11 +31,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="20150103result.csv" />
+		<Unit filename="20170928result.csv" />
 		<Unit filename="20170929result.csv" />
 		<Unit filename="20170929result1.csv" />
+		<Unit filename="201709result.csv" />
 		<Unit filename="data.csv" />
 		<Unit filename="data2.csv" />
 		<Unit filename="inputfilename.txt" />
+		<Unit filename="out.csv" />
 		<Unit filename="test2.cpp" />
 		<Extensions>
 			<code_completion />
