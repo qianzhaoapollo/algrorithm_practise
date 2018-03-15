@@ -14,8 +14,11 @@ for year in years:
         try:
             f = open(finput)
             f.close()
-            os.system("./connect_pieces " + finput + ' ' + output)
-            print("./connect_pieces " + finput + ' ' + output + " is ready!")
-            
+            if os.path.exists(output):
+                print(output + " is already exists!")
+                continue
+            else:
+                os.system("./connect_pieces " + finput + ' ' + output)
+                print("./connect_pieces " + finput + ' ' + output + " is ready!")
         except FileNotFoundError:
             print("File is not found.")
