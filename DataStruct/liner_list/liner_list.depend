@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1522656305 source:f:\mystydy\github\algrorithm_practise\datastruct\liner_list\main.cpp
+	"liner_list.h"
+	<iostream>
+
+1522655595 f:\mystydy\github\algrorithm_practise\datastruct\liner_list\liner_list.h
+
+1522656471 source:f:\mystydy\github\algrorithm_practise\datastruct\liner_list\liner_list.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"liner_list.h"
+
