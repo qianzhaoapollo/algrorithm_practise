@@ -11,7 +11,7 @@ using namespace std;
 
 kalman::kalman(){
 	// TODO Auto-generated constructor stub
-	float init_x = 1.0;
+	float init_x = 0.0;
 	float init_p = 1.0;
 	Kalman1_init(init_x, init_p);
 }
@@ -26,7 +26,7 @@ void kalman::Kalman1_init(float init_x, float init_p)
 	p = init_p;
 	A = 1;
 	H = 1;
-	q = 2;
+	q = 5;
 	r = 5;
 }
 

@@ -5,21 +5,23 @@
  *      Author: super
  */
 
-#include "kalman/kalman.h"
-#include <time.h>
 #include <iostream>
 #include <stdlib.h>
-using namespace std;
+#include <time.h>
 
+#include "kalman/kalman.h"
+#include "gaussiannoise/gaussiannoise.h"
+using namespace std;
 
 void test_kalman()
 {
 	srand(time(NULL));
 	kalman state;
 	int count = 0;
-	while (count < 800) {
-		float measure = 50.0 + rand()%1000 / 100;
-		cout << measure << " ";
+	while (count < 400) {
+//		float measure = 50.0 + rand()%1000 / 100;
+		float measure = 50.0 + generateGaussianNoise(0, 5);
+		cout << measure << "\t";
 		state.kalman1_filter(measure);
 		count++;
 	}
@@ -28,6 +30,7 @@ void test_kalman()
 
 int main()
 {
+	freopen("out.txt", "w", stdout);
 	test_kalman();
 	return 0;
 }
