@@ -26,8 +26,8 @@ void kalman::Kalman1_init(float init_x, float init_p)
 	p = init_p;
 	A = 1;
 	H = 1;
-	q = 5;
-	r = 5;
+	q = 2;
+	r = 2;
 }
 
 float kalman::kalman1_filter(float z_measure)

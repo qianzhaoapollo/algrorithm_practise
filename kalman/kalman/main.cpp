@@ -20,7 +20,7 @@ void test_kalman()
 	int count = 0;
 	while (count < 400) {
 //		float measure = 50.0 + rand()%1000 / 100;
-		float measure = 50.0 + generateGaussianNoise(0, 5);
+		float measure = 50.0 + generateGaussianNoise(0, 2);
 		cout << measure << "\t";
 		state.kalman1_filter(measure);
 		count++;
