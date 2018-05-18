@@ -11,7 +11,7 @@ using namespace std;
 
 kalman::kalman(){
 	// TODO Auto-generated constructor stub
-	float init_x = 0.0;
+	float init_x = 1.0;
 	float init_p = 1.0;
 	Kalman1_init(init_x, init_p);
 }
@@ -26,8 +26,8 @@ void kalman::Kalman1_init(float init_x, float init_p)
 	p = init_p;
 	A = 1;
 	H = 1;
-	q = 2;
-	r = 2;
+	q = 0.0001;
+	r = 0.0001;
 }
 
 float kalman::kalman1_filter(float z_measure)
@@ -40,6 +40,6 @@ float kalman::kalman1_filter(float z_measure)
 	gain = p * H / (p * H * H + r);
 	x = x + gain * (z_measure - H * x);
 	p = (1 - gain * H) * p;
-	cout << x << endl;
+	cout << x << "\t";
 	return x;
 }
