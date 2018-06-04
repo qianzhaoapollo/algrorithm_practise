@@ -18,14 +18,21 @@ private:
 	float Ec[100];
 	float El[100];
 
+	float delta_c[100];
+	float delta_l[100];
+
 	float w[100];
 
 	float theta;
 	float w_;
 	float pc;
-	float t;
+	float t[100];
 
 	float C;
+
+	float Ci[100];
+
+	float A[100];
 
 	void init();
 
